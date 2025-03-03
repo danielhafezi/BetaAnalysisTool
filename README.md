@@ -1,65 +1,32 @@
-# Beta Analysis Project
+# Project Betas
 
-This project provides tools to analyze market beta values for crypto tickers (in HyperLiquid DEX). It offers two key features:
+Project Betas is a multi-stack application designed to analyze market data and calculate beta values for different assets. The project integrates components written in both Python and JavaScript, providing a robust backend for data processing along with a dynamic frontend for visualization.
 
-1. **Market Beta Analysis**  
-   Display market-wide beta analysis that shows the tickers with the highest and lowest beta during a specified period. This view helps identify overall market trends.  
-   ![Market Analysis](market_analysis.png)
+## Stack & Technologies
 
-2. **Ticker Beta Analysis**  
-   Find a specific token’s beta value for a specified time period. This feature allows detailed analysis of a single token's performance.  
-   ![Ticker Analysis](ticker_analysis.png)
+- **Backend (Python):**
+  - The core analytical functionalities are implemented in Python.
+  - Python scripts (e.g., `main.py`, `src/beta_calculator.py`, `src/data_fetcher.py`) handle data fetching, beta calculations, and market analysis.
+  - The [requirements.txt](requirements.txt) file lists the external Python libraries needed. Typical libraries might include:
+    - `requests` for HTTP operations,
+    - `numpy` and `pandas` for numerical analysis and data manipulation,
+    - Other specialized libraries as required by the analysis.
 
-## Project Structure
+- **Frontend (JavaScript/React):**
+  - The user interface is developed using React.
+  - Components found in `src/` such as `src/App.js`, `src/components/BetaPatternAnalysis.js`, and `src/components/MarketBetaAnalysis.js` contribute to a responsive UI.
+  - State management is handled through the use of atoms in `src/atoms/marketBetaState.js` (commonly achieved using libraries like Recoil).
 
-- **main.py**  
-  The primary script to launch or coordinate beta analysis.
+## Libraries & Tools
 
-- **src/**  
-  Contains core logic for beta calculation and data fetching:
-  - **beta_calculator.py**: Calculation logic for beta values.
-  - **data_fetcher.py**: Module for fetching market data.
-  - **components/**: Contains UI components for displaying analysis (e.g., `MarketBetaAnalysis.js`, `BetaPatternAnalysis.js`).
-  - **atoms/**: Contains state management files (e.g., `marketBetaState.js`).
+The project utilizes a range of libraries to streamline data processing and UI interactivity:
 
-- **run_beta_calculator.bat**  
-  A batch script to run the beta calculator.
+- **Python Libraries:**
+  - Libraries such as `ccxt`, `requests`, `numpy`, and `pandas` enable efficient data handling, computation, and network operations.
+  - Additional libraries include `streamlit`, `plotly`, and `matplotlib` for interactive visualizations and app development.
+  - All required packages are listed in the [requirements.txt](requirements.txt) file.
 
-- **requirements.txt**  
-  Lists the project dependencies.
-
-- **market_analysis.png** & **ticker_analysis.png**  
-  Screenshots illustrating the two main features.
-
-## Getting Started
-
-1. **Install Dependencies**  
-   Ensure you have Python installed. Then install the required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Run the Project**  
-   You can run the project by executing the batch script:
-   ```bash
-   run_beta_calculator.bat
-   ```
-   Alternatively, run the main script:
-   ```bash
-   python main.py
-   ```
-
-## Usage
-
-- **Market Beta Analysis**:  
-  Use the market-wide analysis to review which tickers have the most extreme beta values over your chosen period.
-
-- **Ticker Beta Analysis**:  
-  Enter a specific token to obtain its beta value for your selected timeframe.
-
-## Additional Information
-
-- The project uses a combination of Python for back-end processing and JavaScript for interactive components.
-- Cached data is stored in the `cache/` directory to optimize performance.
-
-This project is designed to help users quickly assess market beta trends and analyze individual token performance over time.
+- **JavaScript Libraries:**
+  - **React:** For building the user interface and creating interactive components.
+  - **State Management (e.g., Recoil):** Helps manage and share state across different components.
+  - Additional packages for styling, data fetching, or charting may also be integrated into the React stack.
