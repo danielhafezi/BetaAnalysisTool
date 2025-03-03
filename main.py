@@ -1,4 +1,6 @@
 import streamlit as st
+if 'end_time' not in st.session_state:
+    st.session_state.end_time = None
 from datetime import datetime, timezone, timedelta
 from src.data_fetcher import DataFetcher
 from src.beta_calculator import calculate_all_betas, create_beta_charts, analyze_beta_patterns
