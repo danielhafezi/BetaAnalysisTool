@@ -1,4 +1,4 @@
 @echo off
-pip install --user --upgrade --force-reinstall --no-warn-script-location --ignore-installed -r requirements.txt
-streamlit run main.py
+pip install --user --upgrade --no-warn-script-location -r requirements.txt
+python -m streamlit run main.py
 pause
